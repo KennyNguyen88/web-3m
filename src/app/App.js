@@ -4,18 +4,13 @@ import {appActions} from './ducks/';
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Landing from "../landing/";
+import History from "../history/";
 
 export class App extends Component {
 
   state = {
     message: ''
   };
-
-  componentDidMount(){
-    this.props.sayHi();
-    this.props.sayYeah();
-    this.props.doPing();
-  }
 
   componentWillReceiveProps(newProps){
     this.setState({message: newProps.message});
@@ -25,7 +20,7 @@ export class App extends Component {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={Landing}/>
+                <Route exact path="/" component={History}/>
                 <Route path="/test" render={() => <div> This is Test </div>} />
             </Switch>
         </BrowserRouter>

@@ -1,15 +1,29 @@
 import React from "react";
-
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 
 export const Landing = () => {
     return (
         <div>
             This is Landing
-            <FontAwesomeIcon icon={faLaptopCode} size="2x"/>
         </div>
     )
 };
 
-export default Landing;
+const mapStateToProps = (state, ownProps) => {
+    const {firestore: {
+        ordered: {
+            todos
+        }
+    }} = state;
+    console.log('todos',todos);
+    return {todos};
+};
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([{
+        collection: 'todos'
+    }])
+)(Landing)
