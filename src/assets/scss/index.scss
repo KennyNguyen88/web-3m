@@ -7,3 +7,10 @@
 @import "components/index";
 @import "containers/index";
 @import "utilities/index";
+
+.app-container{
+  display: flex;
+}
+.sidebar-container{
+  min-width: 20%;
+}

@@ -18,10 +18,9 @@ const History = ({histories}) => {
             <HistoryList histories={histories}/>
         </div>
     )
-
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     const {firestore: {
         ordered: {
             histories

@@ -5,6 +5,8 @@ import {appActions} from './ducks/';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Landing from "../landing/";
 import History from "../history/";
+import Sidebar from "./Sidebar";
+
 
 export class App extends Component {
 
@@ -19,10 +21,17 @@ export class App extends Component {
   render() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={History}/>
-                <Route path="/test" render={() => <div> This is Test </div>} />
-            </Switch>
+            <div className="app">
+                <div className="app-container">
+                    <Sidebar />
+                    <div className="content-wrapper">
+                        <Switch>
+                            <Route exact path="/" component={History}/>
+                            <Route path="/test" render={() => <div> This is Test </div>} />
+                        </Switch>
+                    </div>
+                </div>
+            </div>
         </BrowserRouter>
     );
   }
