@@ -1,4 +1,5 @@
 import React from 'react';
+import withTransition from "../withTransition";
 
 const HistoryItem = (
     {
@@ -26,4 +27,6 @@ const HistoryItem = (
 
 };
 
-export default HistoryItem;
+const WrappedLogin = withTransition(HistoryItem);
+
+export default WrappedLogin;

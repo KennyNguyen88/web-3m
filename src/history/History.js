@@ -9,20 +9,13 @@ import HistoryList from "./HistoryList";
 const History = ({histories}) => {
 
     return(
-        <div className="container">
-            <div className="row">
-                <div className='col-xl-12'>
-                    <div className="card">
-                      <div className="card-header">
-                          Latest Event
-                      </div>
-                        <div className="card-body">
-                            <HistoryList histories={histories}/>
-                        </div>
-                    </div>
-                </div>
+        <div className="card">
+            <div className="card-header">
+                Latest Event
             </div>
-
+            <div className="card-body">
+                <HistoryList histories={histories}/>
+            </div>
         </div>
     )
 };

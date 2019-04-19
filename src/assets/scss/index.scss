@@ -25,12 +25,18 @@
     display: flex;
     flex-flow: column;
     list-style-type: none;
-    padding: 0;
+    padding-top: 1rem;
+    padding-left: 0;
     margin: 0;
   }
   &-item{
     padding: 1rem;
+    background-color: transparent;
+    transition: .1s background-color ease-in-out;
     a{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       color: white;
       text-decoration: none;
       &:hover{
@@ -38,5 +44,19 @@
         text-decoration: none;
       }
     }
+    &:hover{
+      background-color: rgba(yellow,.1);
+    }
   }
+}
+.logo-container{
+  padding: 1rem;
+  border-bottom: 1px solid $yellow;
+}
+.fade-in {
+  opacity: 0;
+}
+.fade-in.visible {
+  transition: opacity .2s ease-in-out;
+  opacity: 1;
 }

@@ -26,8 +26,8 @@ export class App extends Component {
                     <div className="content-wrapper">
                         <Switch>
                             <Route exact path="/" component={Dashboard}/>
-                            <Route path="/books" render={() => <div> Under Construction </div>} />
-                            <Route path="/tshirts" render={() => <div> Under Construction </div>} />
+                            <Route path="/books" render={() => <div className="container-fluid p-2"> Under Construction </div>} />
+                            <Route path="/tshirts" render={() => <div className="container-fluid p-2"> Under Construction </div>} />
                         </Switch>
                     </div>
                 </div>
