@@ -1,6 +1,7 @@
 import React from 'react';
+import moment from 'moment';
 import HistoryItem from "./HistoryItem";
-
+import withTransition from "../withTransition";
 const HistoryList = ({histories}) => {
 
     return (
@@ -8,21 +9,28 @@ const HistoryList = ({histories}) => {
             {
                 histories &&
                     histories.map(
-                        (history) => {
+                        (history,index) => {
+
+                            console.log('history',history);
 
                             const {
-                                book: {
-                                    title: bookTitle,
-                                    author: bookAuthor
+                                id,
+                                action: actionType,
+                                createdDate,
+                                item:{
+                                    id: itemId,
+                                    author: bookAuthor,
+                                    name: bookTitle,
+                                    type: itemType,
+                                    size: itemSize
                                 },
-                                user: {
-                                    full_name: userName,
-                                    phone_nunmber: userPhone,
-                                    email: userEmail
-                                },
-                                borrowing_date: borrowingDate,
-                                return_date: returnDate,
-                                id
+                                user:{
+                                    id: userId,
+                                    email: userEmail,
+                                    fullName: userName,
+                                    phoneNumber: userPhone
+                                }
+
                             } = history;
 
                             return <HistoryItem
@@ -31,9 +39,12 @@ const HistoryList = ({histories}) => {
                                 userName={userName}
                                 userPhone={userPhone}
                                 userEmail={userEmail}
-                                borrowingDate={borrowingDate}
-                                returnDate={returnDate}
-                                history={history} key={id}
+                                history={history}
+                                key={index}
+                                actionType={actionType}
+                                itemType={itemType}
+                                itemSize={itemSize}
+                                createdDate={moment(createdDate.toDate()).fromNow()}
                             />
                         }
                     )
@@ -42,4 +53,6 @@ const HistoryList = ({histories}) => {
     )
 };
 
-export default HistoryList;
+const WrappedComponent = withTransition(HistoryList);
+
+export default WrappedComponent;

@@ -8,7 +8,7 @@ const Dashboard = () => {
         <div className="dashboard">
             <div className="dashboard-container container-fluid pt-3">
                 <div className="row">
-                    <div className="col-12 col-md-3">
+                    <div className="col-12 col-md-4 ">
                         <div className="card">
                             <div className="card-header">
                                 Some good news
@@ -18,7 +18,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-3 ">
+                    <div className="col-12 col-md-4 ">
                         <div className="card">
                             <div className="card-header">
                                 Some good news
@@ -28,17 +28,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-md-3 ">
-                        <div className="card">
-                            <div className="card-header">
-                                Some good news
-                            </div>
-                            <div className="card-body">
-                                TBD
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-3 ">
+                    <div className="col-12 col-md-4 ">
                         <History />
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import withTransition from "../withTransition";
-
+import { faBook, faTshirt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const HistoryItem = (
     {
         bookTitle,
@@ -8,25 +8,29 @@ const HistoryItem = (
         userName,
         userEmail,
         userPhone,
-        borrowingDate,
-        returnDate
+        actionType,
+        createdDate,
+        itemType,
+        itemSize
     }
 ) => {
-
+    const itemIcon = itemType === 'book' ? <FontAwesomeIcon icon={faBook}/> :<FontAwesomeIcon icon={faTshirt}/>;
     return (
         <li className="list-group-item">
-            <strong className=""> {bookTitle} </strong>
-            <h6> {bookAuthor} </h6>
-            <strong className=""> {userName} </strong>
-            <h6> {userEmail} </h6>
-            <h6> {userPhone} </h6>
-            <h6> {borrowingDate} </h6>
-            <h6> {returnDate} </h6>
+            <div className={`action-type mb-2 ${actionType}`}>
+                {itemSize && <span className="mr-2">{itemSize}</span>}
+                <span className="mr-2">{itemIcon}</span>
+                <span>{actionType}</span>
+            </div>
+            <h6 className="text-bold"> {bookTitle}</h6>
+            {/*<p className="small text-muted"> {bookAuthor} </p>*/}
+            <h6 className="text-bold"> {userName} </h6>
+            {/*<p className="small text-muted"> {userEmail} </p>*/}
+            {/*<p className="small text-muted"> {userPhone} </p>*/}
+            <h6 className="small">{createdDate}</h6>
         </li>
     )
 
 };
 
-const WrappedLogin = withTransition(HistoryItem);
-
-export default WrappedLogin;
+export default HistoryItem;

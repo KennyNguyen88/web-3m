@@ -21,17 +21,22 @@ const History = ({histories}) => {
 };
 
 const mapStateToProps = (state) => {
+
     const {firestore: {
         ordered: {
             histories
         }
     }} = state;
+    console.log('histories',histories);
     return {histories};
 };
 
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([{
-        collection: 'histories', limit: 3
+        collection: 'histories'
+        , limit: 3
+        , orderBy: ['createdDate', 'desc']
+
     }])
 )(History);

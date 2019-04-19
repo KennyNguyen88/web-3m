@@ -5,7 +5,7 @@ import {appActions} from './ducks/';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Dashboard from "../dashboard/";
 import Sidebar from "./Sidebar";
-
+import Book from "../book";
 
 export class App extends Component {
 
@@ -26,7 +26,7 @@ export class App extends Component {
                     <div className="content-wrapper">
                         <Switch>
                             <Route exact path="/" component={Dashboard}/>
-                            <Route path="/books" render={() => <div className="container-fluid p-2"> Under Construction </div>} />
+                            <Route path="/books" component={Book} />
                             <Route path="/tshirts" render={() => <div className="container-fluid p-2"> Under Construction </div>} />
                         </Switch>
                     </div>

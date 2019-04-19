@@ -60,3 +60,23 @@
   transition: opacity .2s ease-in-out;
   opacity: 1;
 }
+.action-type{
+  text-align: right;
+  span{
+    padding: .5rem 1rem;
+    color: white;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #36a1d9;
+  }
+  &.borrow{
+    span{
+      background: #ffc107;
+    }
+  }
+  &.return{
+    span{
+      background: forestgreen;
+    }
+  }
+}
