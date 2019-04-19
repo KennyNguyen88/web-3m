@@ -4,7 +4,7 @@ import HistoryItem from "./HistoryItem";
 const HistoryList = ({histories}) => {
 
     return (
-        <div className='row'>
+        <ul className='list-group list-group-flush'>
             {
                 histories &&
                     histories.map(
@@ -38,7 +38,7 @@ const HistoryList = ({histories}) => {
                         }
                     )
             }
-        </div>
+        </ul>
     )
 };
 

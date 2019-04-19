@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import {appActions} from './ducks/';
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Landing from "../landing/";
-import History from "../history/";
+import Dashboard from "../dashboard/";
 import Sidebar from "./Sidebar";
 
 
@@ -26,8 +25,9 @@ export class App extends Component {
                     <Sidebar />
                     <div className="content-wrapper">
                         <Switch>
-                            <Route exact path="/" component={History}/>
-                            <Route path="/test" render={() => <div> This is Test </div>} />
+                            <Route exact path="/" component={Dashboard}/>
+                            <Route path="/books" render={() => <div> Under Construction </div>} />
+                            <Route path="/tshirts" render={() => <div> Under Construction </div>} />
                         </Switch>
                     </div>
                 </div>

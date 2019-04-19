@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App } from "../App";
-import { Landing } from "../../landing";
+import { Landing } from "../../dashboard";
 
 function setup() {
     const props = {

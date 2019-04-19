@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 const Sidebar = (props) => {
   return (
     <nav className="sidebar-container">
-      <ul>
-          <li>
-              <Link to='/' className=''>Test 01</Link>
+      <ul className="sidebar-list">
+          <li className='sidebar-item'>
+              <Link to='/'>Dashboard</Link>
           </li>
-          <li>
-              <Link to='/' className=''>Test 02</Link>
+          <li className='sidebar-item'>
+              <Link to='/books'>Books</Link>
+          </li>
+          <li className='sidebar-item'>
+              <Link to='/tshirts'>Tshirt</Link>
           </li>
       </ul>
     </nav>
@@ -17,13 +20,3 @@ const Sidebar = (props) => {
 }
 
 export default Sidebar;
-
-// const mapStateToProps = (state) => {
-//   // console.log(state);
-//   return{
-//     auth: state.firebase.auth,
-//     profile: state.firebase.profile
-//   }
-// }
-//
-// export default connect(mapStateToProps)(Navbar)
